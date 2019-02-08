@@ -151,7 +151,7 @@ def simple_renderer(rn,
     # Rendered model color
     rn.set(v=verts, f=faces, vc=color, bgcolor=np.zeros(3))
 
-    rn.vc = VertNormals(verts, faces).r.reshape((-1,3))
+    rn.vc = VertNormals(verts, faces, True).r.reshape((-1,3))
     rn.vc = (rn.vc + 1.0)*0.5
     # print("VN!")
     # print(vn)
