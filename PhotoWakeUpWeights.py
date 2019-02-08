@@ -182,7 +182,7 @@ def main(img_path, json_path=None):
     #print(theta)
     theta_out = theta.tolist()
     with open('results/HMR_value_out.json', 'w') as outfile: 
-	json.dump([theta_out], outfile)
+	    json.dump([theta_out], outfile)
 
 if __name__ == '__main__':
     config = flags.FLAGS
