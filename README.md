@@ -1,10 +1,13 @@
-# End-to-end Recovery of Human Shape and Pose
+# HMR Code Modified for Photo Wake Up Implementation
 
+Photo Wake Up project: https://grail.cs.washington.edu/projects/wakeup/
+Chung-Yi Weng, Brian Curless, Ira Kemelmacher-Shlizerman
+
+Original HMR (End-to-end Recovery of Human Shape and Pose) GitHub: https://github.com/akanazawa/hmr
 Angjoo Kanazawa, Michael J. Black, David W. Jacobs, Jitendra Malik
 CVPR 2018
 
-[Project Page](https://akanazawa.github.io/hmr/)
-![Teaser Image](https://akanazawa.github.io/hmr/resources/images/teaser.png)
+The following requirements are from the original HMR project: https://github.com/akanazawa/hmr
 
 ### Requirements
 - Python 2.7
@@ -40,40 +43,7 @@ wget https://people.eecs.berkeley.edu/~kanazawa/cachedir/hmr/models.tar.gz && ta
 
 2. Run the demo
 ```
-python -m demo --img_path data/coco1.png
-python -m demo --img_path data/im1954.jpg
+python PhotoWakeUpHMR/PhotoWakeUp.py -img_path data/coco1.png
 ```
 
-Images should be tightly cropped, where the height of the person is roughly 150px.
-On images that are not tightly cropped, you can run
-[openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) and supply
-its output json (run it with `--write_json` option).
-When json_path is specified, the demo will compute the right scale and bbox center to run HMR:
-```
-python -m demo --img_path data/random.jpg --json_path data/random_keypoints.json
-```
-(The demo only runs on the most confident bounding box, see `src/util/openpose.py:get_bbox`)
-
-### Training code/data
-Please see the [doc/train.md](https://github.com/akanazawa/hmr/blob/master/doc/train.md)!
-
-### Citation
-If you use this code for your research, please consider citing:
-```
-@inProceedings{kanazawaHMR18,
-  title={End-to-end Recovery of Human Shape and Pose},
-  author = {Angjoo Kanazawa
-  and Michael J. Black
-  and David W. Jacobs
-  and Jitendra Malik},
-  booktitle={Computer Vision and Pattern Regognition (CVPR)},
-  year={2018}
-}
-```
-
-### Opensource contributions
-[Dawars](https://github.com/Dawars) has created a docker image for this project: https://hub.docker.com/r/dawars/hmr/
-
-[MandyMo](https://github.com/MandyMo) has implemented a pytorch version of the repo: https://github.com/MandyMo/pytorch_HMR.git
-
-I have not tested them, but I appreciate the contribution! Thank you!!
+Many thanks to the original authors contributions!!
